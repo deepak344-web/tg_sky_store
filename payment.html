@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Fire Payment</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      padding: 30px;
+    }
+
+    .payment-container {
+      max-width: 500px;
+      margin: auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00c6ff;
+      margin-bottom: 25px;
+    }
+
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    label {
+      background: #262626;
+      padding: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    label:hover,
+    input[type="radio"]:checked + span {
+      border-color: #00c6ff;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    span {
+      font-size: 1.1rem;
+      display: block;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #00c6ff;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0093cc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>🔐 Select Payment Method</h2>
+    <form id="paymentForm">
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="payment" value="upi" checked>
+          <a href="payment-upi-details.html"><span>UPI (Google Pay / PhonePe / Paytm)</span></a>
+        </label>
+
+        <label>
+          <input type="radio" name="payment" value="netbanking">
+          <a href="payment-netbanking.html"><span>Net Banking</span></a>
+        </label>
+
+        <label>
+          <input type="radio" name="payment" value="debitcard">
+          <a href="payment-debitcard.html"><span>Debit Card</span></a>
+        </label>
+      </div>
+      <button type="submit" class="btn">Proceed to Payment</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("paymentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const selected = document.querySelector('input[name="payment"]:checked').value;
+
+      if (selected === "upi") {
+        window.location.href = "upi-details.html";
+      } else if (selected === "netbanking") {
+        window.location.href = "netbanking.html";
+      } else if (selected === "debitcard") {
+        window.location.href = "debitcard.html";
+      }
+    });
+  </script>
+
+</body>
+</html>
