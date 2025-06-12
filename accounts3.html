@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FF Account Details</title>
+  <link rel="stylesheet" href="account-detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="logo">🔥 FF Premium ID - Full View</h1>
+  </header>
+  <!-- Lightbox container -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Zoomed Image" id="lightbox-img">
+</div>
+
+
+  <section class="details">
+    <div class="container">
+      <h2>Elite Pass + Rare Skins ID</h2>
+      <p class="price">₹999</p>
+
+      <div class="gallery">
+        <img src="800 photos/800-1.jpg" alt="Screenshot 1" class="zoomable">
+        <img src="800 photos/800-2.jpg" alt="Screenshot 2" class="zoomable">
+        <img src="800 photos/800-3.jpg" alt="Screenshot 3" class="zoomable">
+        <img src="800 photos/800-4.jpg" alt="Screenshot 4" class="zoomable">
+        <img src="800 photos/800-5.jpg" alt="Screenshot 5" class="zoomable">
+        <img src="800 photos/800-6.jpg" alt="Screenshot 6" class="zoomable">
+        <img src="800 photos/800-7.jpg" alt="Screenshot 7" class="zoomable">
+        <img src="800 photos/800-8.jpg" alt="Screenshot 8" class="zoomable">
+        <img src="800 photos/800-9.jpg" alt="Screenshot 9" class="zoomable">
+
+      </div>
+
+      <div class="description">
+        <h3>Account Highlights:</h3>
+        <ul>
+          <li>Level 60 account</li>
+          <li>250+ Skins (Legendary + Rare)</li>
+          <li>All Elite Pass items unlocked</li>
+          <li>100+ gun skins + bundles</li>
+          <li>Fast login and instant delivery</li>
+        </ul>
+
+        <a href="payment.html" class="btn">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 FF Store | All rights reserved</p>
+  </footer>
+
+</body>
+</html>
+ 
+<style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+header {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #00c6ff;
+}
+
+.details {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #00c6ff;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.5rem;
+  background: #00c6ff;
+  color: #000;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.gallery {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.gallery img {
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  object-fit: cover;
+}
+
+.description h3 {
+  margin-bottom: 10px;
+}
+
+.description ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #00c6ff;
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #007acc;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #888;
+}
+
+/* Lightbox background */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.zoomable {
+  cursor: pointer;
+}
+</style>
+
+<script>
+  const zoomables = document.querySelectorAll('.zoomable');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  zoomables.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>

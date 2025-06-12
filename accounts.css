@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0e0e0e;
+  color: #fff;
+}
+
+header {
+  background: #111;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.logo {
+  font-size: 2rem;
+  color: #00c6ff;
+}
+
+.account-listings {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.account-listings h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #00c6ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  color: #00c6ff;
+  margin: 15px 0 10px;
+}
+
+.card p {
+  padding: 0 15px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.price {
+  display: block;
+  background: #00c6ff;
+  color: #000;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+footer {
+  background: #111;
+  color: #888;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
