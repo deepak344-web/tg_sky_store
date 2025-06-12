@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Make Your Payment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #121212, #1f1f1f);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .payment-container {
+      background: #1a1a1a;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 198, 255, 0.3);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .payment-container h2 {
+      color: #00c6ff;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .payment-container p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    .qr-code {
+      width: 220px;
+      height: 220px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,198,255,0.3);
+    }
+
+    .upi-id {
+      background: #2a2a2a;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: inline-block;
+      font-size: 0.95rem;
+      color: #00c6ff;
+      margin-bottom: 10px;
+    }
+
+    .note {
+      color: #ccc;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 500px) {
+      .payment-container {
+        padding: 25px;
+      }
+
+      .payment-container h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>Scan & Pay via UPI</h2>
+    <p>Use any UPI app (GPay / PhonePe / Paytm) to scan and pay securely.</p>
+
+    <!-- Replace this QR image with your real QR code -->
+    <img src="QR.jpg" alt="UPI QR Code" class="qr-code" />
+
+    <div class="upi-id">UPI ID: <strong>madhur1@fam</strong></div>
+
+    <p class="note">After payment, take a screenshot and share on instagram or whats app for confirmation.</p>
+  </div>
+
+</body>
+</html>
