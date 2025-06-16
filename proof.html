@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Payment Proof</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      padding: 40px 30px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .custom-file-upload {
+      border: 2px dashed #888;
+      padding: 30px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-block;
+      transition: all 0.3s ease;
+      color: #666;
+    }
+
+    .custom-file-upload:hover {
+      background: #f0f0f0;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    #preview {
+      margin-top: 20px;
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 12px;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .submit-btn {
+      margin-top: 25px;
+      background: linear-gradient(135deg, #00c9ff, #92fe9d);
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Toast Message Style */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      animation: slideUp 0.5s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translate(-50%, 20px); opacity: 0; }
+      to { transform: translate(-50%, 0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Upload Payment Screenshot</h2>
+
+  <label class="custom-file-upload">
+    <input type="file" id="screenshotInput" accept="image/*">
+    📷 Click to Upload Image
+  </label>
+
+  <img id="preview" alt="Screenshot Preview" />
+
+  <button class="submit-btn" onclick="submitProof()">Submit Payment Proof</button>
+</div>
+
+<div id="toast" class="toast">👋 Welcome! Please upload your payment screenshot to proceed.</div>
+
+<script>
+  const input = document.getElementById('screenshotInput');
+  const preview = document.getElementById('preview');
+  const toast = document.getElementById('toast');
+
+  input.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = 'block';
+    }
+  });
+
+  function submitProof() {
+    if (input.files.length === 0) {
+      showToast("⚠️ Please upload a screenshot before submitting.");
+    } else {
+    window.location.href = "confirmation.html";
+
+    }
+  }
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 5000); // 👈 5 seconds delay
+  }
+
+  // Show toast on page load
+  window.onload = function () {
+    showToast("👋 Welcome! Please upload your payment screenshot to proceed.");
+  }
+</script>
+
+</body>
+</html>
