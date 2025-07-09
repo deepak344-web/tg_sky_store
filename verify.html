@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Age Verification</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .checkbox-group {
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Terms & Conditions</h2>
+  <p>Please read and accept the following terms to continue:</p>
+  
+  <div class="checkbox-group">
+    <label>
+      <input type="checkbox" id="termsCheckbox" />
+      I agree to the <a href="terms.html">Terms and Conditions</a>
+    </label>
+  </div>
+  <div class="checkbox-group">
+    <label>
+      <input type="checkbox" id="ageCheckbox" />
+      I confirm that I am 18 years old or older
+    </label>
+  </div>
+  
+  <button id="continueButton" disabled onclick="proceed()">Continue</button>
+</div>
+
+<script>
+  const termsCheckbox = document.getElementById("termsCheckbox");
+  const ageCheckbox = document.getElementById("ageCheckbox");
+  const continueButton = document.getElementById("continueButton");
+
+  function updateButtonState() {
+    continueButton.disabled = !(termsCheckbox.checked && ageCheckbox.checked);
+  }
+
+  termsCheckbox.addEventListener("change", updateButtonState);
+  ageCheckbox.addEventListener("change", updateButtonState);
+
+  function proceed() {
+    alert("Access granted. Welcome!");
+    window.location.href = "main.html"; // Change this to your desired page
+  }
+</script>
+
+</body>
+</html>
